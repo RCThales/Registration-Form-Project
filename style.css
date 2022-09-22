@@ -10,7 +10,8 @@ body{
     justify-content: center;
     align-items: center;
 }
-form{
+
+#formAdd{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,3 +51,65 @@ label{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#personList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#personList span {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background: rgb(221, 225, 245);
+    box-shadow: rgb(158, 162, 175) 5px 5px 10px;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.384);
+}
+
+#formDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#formEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+    background: rgb(221, 225, 245);
+    border-radius: 10px;
+    box-shadow: rgb(158, 162, 175) 5px 5px 10px;
+}
+
+
+/* The Close Button */
+.close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    right: 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover {
+    height: 103%;
+    color: red;
+    cursor: pointer;
+}

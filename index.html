@@ -10,33 +10,51 @@
      <script src="script.js"></script> 
 </head>
 
-    <div id="formWrapper">
-        <form>
+<body>
+        <div id="formAdd">
             <h1>Registration Form</h1>
-            <label>Name</label>
+            <label>Name*</label>
             <input id="name"> </input>
-            <label>Age</label>
-            <input id="age"> </input>
-            <label>SIN</label>
-            <input id="SIN"> </input>
-            <label>Zodiac</label>
+            <label>Age*</label>
+            <input  maxlength="2" id="age"> </input>
+            <label>SIN*</label>
+            <input minlength="9" maxlength="9" id="SIN"> </input>
+            <label>Zodiac*</label>
             <select id="zodiac">
-                <option>Choose an option</option>
+                <option  disabled>Choose an option</option>
             </select>
 
             <button onclick="saveInfo()">Submit</button>
             <button onclick="clearInfo()">Clear</button>
-        </form>
-    </div>
-    
+        </div>   
    
     <hr>
 
-    <div id="listagem">
-
+     <input type="text" id="searchInput" onkeyup="search()" placeholder="Search">
+    <div id="personList">
     </div>
 
+        <div id="modal">
+            <div id="formDiv">
+                <div id="formEdit">
+                    <span onclick="closeModal()" class="close">&times;</span>
+                    <h1>Edit Person</h1>
+                    <label>Name*</label>
+                    <input id="nameEdit"> </input>
+                    <label>Age*</label>
+                    <input id="ageEdit"> </input>
+                    <label>SIN*</label>
+                    <input id="SINEdit"> </input>
+                    <label>Zodiac*</label>
+                    <select id="zodiacEdit">
+                    <option  disabled>Choose an option</option>
+                    </select>
+                    <button onclick="editConfirm()">Submit</button>
+                </div>
 
+            </div>
+               
+        </div>
 
 </body>
 </html>
