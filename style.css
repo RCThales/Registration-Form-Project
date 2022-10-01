@@ -1,3 +1,11 @@
+:root{
+    --primary: #82aeba;
+    --secondary: #caedf6;
+    --accent: #E6A1B9;
+    --accent2:#fff698;
+    --fields: #f3f3f3;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +17,68 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--secondary);
+
 }
+
+#btnArea{
+    display: flex;
+}
+
+#submitBtn, #clearBtn, #editConfirm{
+    height: 50px;
+    min-width: 100px;
+    margin-top: 50px;
+    background-color: var(--accent2);
+    border: 0;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+    #btnPeopleEdit {
+    background-color: var(--accent2);
+    border: 0;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+#btnPeopleDelete{
+    background: none;
+    border: 0;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    min-width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.parentSpan{
+    position: relative;
+}
+
+#btnPeopleDelete:hover {
+    background-color: rgb(227, 65, 65);
+    color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+
+#submitBtn:hover,
+#clearBtn:hover,
+#btnPeopleEdit:hover,
+#editConfirm:hover
+ {
+    background-color: #E6A1B9;
+    cursor: pointer;
+}
+
+#submitBtn:active,
+#clearBtn:active,
+#btnPeople:active {
+    background-color: #d192a8;
+    cursor: pointer;
+}
+
 
 #formAdd{
     display: flex;
@@ -20,9 +89,11 @@ body{
     width: 100%;
     max-width: 500px;
     margin-top: 2rem;
-    background: rgb(221, 225, 245);
+    background: var(--primary);
     border-radius: 10px;
-    box-shadow: rgb(158, 162, 175) 5px 5px 10px;
+    box-shadow: rgb(69, 71, 79) 5px 5px 10px;
+    padding: 40px;
+    
 }
 
 hr{
@@ -33,22 +104,30 @@ hr{
 h1{
     text-align: center;
     font-size: clamp(1.5rem, 1.5vw, 2rem);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin: 2rem
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 2rem;
 }
 
 input, select, button{
-    background: rgb(250, 254, 255);
+    background: var(--fields);
     font-size: medium;
     min-width: 200px;
     margin: 1rem;
     min-height:30px;
     border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 label{
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.animationDelete{
+    transition: 0.2s all ease;
+    transform: translateY(1rem);
+    opacity: 0;
 }
 
 #personList{
@@ -57,14 +136,20 @@ label{
     justify-content: space-evenly;
     font-size: 1.2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.2s all ease;
 }
 
 #personList span {
     margin: 10px;
     padding: 20px;
     border-radius: 5px;
-    background: rgb(221, 225, 245);
-    box-shadow: rgb(158, 162, 175) 5px 5px 10px;
+    background: var(--primary);
+    box-shadow: rgb(73, 76, 82) 5px 5px 10px;
+}
+
+span{
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #modal {
@@ -91,25 +176,68 @@ label{
     justify-content: center;
     align-items: center;
     min-width: 500px;
-    background: rgb(221, 225, 245);
+    background: var(--primary);
     border-radius: 10px;
-    box-shadow: rgb(158, 162, 175) 5px 5px 10px;
+    box-shadow: rgb(41, 42, 45) 5px 5px 10px;
+    padding: 40px;
+}
+
+#formEdit h1 label{
+    color: var(--fields);
+}
+
+#searchInput{
+    width: 30%;
+    height: 3rem;
+    padding: 10px;
+    margin: 0;      
+    margin-bottom: 30px;
+}
+
+#searchInput:focus {
+    outline: none;
+}
+
+i {
+    
+    border-radius: 10px;
+    margin-bottom: 30px;
+    color: #4D8A99;
+    pointer-events: none;
+}
+
+#searchDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 
 /* The Close Button */
 .close {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
+    position: absolute;
+    width: 10px;
+    height: 10px; 
     right: 0;
+    top: 0;
+    margin-right: 25px;
     font-size: 40px;
     font-weight: bold;
+    transition: all 0.1s ease;
 }
 
 .close:hover {
-    height: 103%;
-    color: red;
+    color: rgb(217, 8, 39);
     cursor: pointer;
+}
+
+.close:active {
+    color: rgb(182, 8, 34);
+    cursor: pointer;
+}
+
+hr{
+    color: var(--secondary);
+    height: 1px;
 }

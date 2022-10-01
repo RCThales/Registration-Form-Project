@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <title>Registration Form Project</title>
 
      <link rel="stylesheet" href="style.css">
@@ -11,6 +12,8 @@
 </head>
 
 <body>
+    <button style="border:0; position: absolute; top:0; right: 0; background: #86b8c4; color:rgb(67, 67, 67)" onclick="clearLocalStorage()">Clear LOCAL STORAGE</button>
+
         <div id="formAdd">
             <h1>Registration Form</h1>
             <label>Name*</label>
@@ -24,13 +27,22 @@
                 <option  disabled>Choose an option</option>
             </select>
 
-            <button onclick="saveInfo()">Submit</button>
-            <button onclick="clearInfo()">Clear</button>
+            <div id="btnArea">
+                <button id="submitBtn" onclick="saveInfo()">Submit</button>
+                <button id="clearBtn" onclick="clearInfo()">Clear</button>
+            </div>
+           
+
         </div>   
    
     <hr>
+    <hr>
 
-     <input type="text" id="searchInput" onkeyup="search()" placeholder="Search">
+    <div id="searchDiv">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search">
+         <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    
     <div id="personList">
     </div>
 
@@ -49,9 +61,8 @@
                     <select id="zodiacEdit">
                     <option  disabled>Choose an option</option>
                     </select>
-                    <button onclick="editConfirm()">Submit</button>
+                    <button id="editConfirm" onclick="editConfirm()">Submit</button>
                 </div>
-
             </div>
                
         </div>
