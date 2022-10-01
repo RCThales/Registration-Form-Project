@@ -17,7 +17,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary);
 
 }
 
@@ -186,6 +185,10 @@ span{
     color: var(--fields);
 }
 
+input{
+    padding: 10px;
+}
+
 #searchInput{
     width: 30%;
     height: 3rem;
@@ -237,7 +240,39 @@ i {
     cursor: pointer;
 }
 
-hr{
-    color: var(--secondary);
-    height: 1px;
+.mainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 30px;
+}
+
+.secondaryDiv{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background: white;
+}
+
+.custom-shape-divider-top-1664646867 {
+    width: 100vw;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1664646867 svg {
+    position: relative;
+    display: block;
+    width: calc(177% + 1.3px);
+    height: 98px;
+}
+
+.custom-shape-divider-top-1664646867 .shape-fill {
+    fill: #caedf6;
 }
